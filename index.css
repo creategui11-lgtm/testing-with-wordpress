@@ -1,0 +1,138 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.video-container > #video {
+    width: 100%;
+}
+
+.video-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video-overlay {
+    margin-top: 1rem;
+    position: absolute;
+    color: white;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    z-index: 1;
+}
+
+.video-selector-overlay {
+    position: absolute;
+    color: white;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+    margin-top: 10rem;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.video-controls {
+    position: relative;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(4px);
+    display: flex;
+    z-index: 2;
+    margin-top: -40px;
+    padding: 5px;
+}
+
+button {
+    width: 5rem;
+    border-radius: 1rem;
+    border: solid;
+    border-width: .15rem;
+    font-size: 1rem;
+    
+    background-color: rgb(225, 225, 225);
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.overlay-content > button {
+    width: 10rem;
+}
+
+.overlay-content > iframe {
+    width: 100%;
+    height: 30rem;
+}
+
+#hotspot {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    background-color: rgba(0, 123, 255, 0.85);
+
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+
+    display: none;
+    cursor: pointer;
+    z-index: 3;
+
+    /* Center the "i" */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Optional polish */
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
+    user-select: none;
+}
+
+/* Tooltip bubble */
+#hotspot::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+/* Show tooltip on hover */
+#hotspot:hover::after {
+    opacity: 1;
+}
+
+.video-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
